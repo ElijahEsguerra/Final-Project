@@ -33,15 +33,15 @@ const firebaseConfig = {
 
             }
             else{
-                console.log("no document found matching id")
+                console.log("No user with the email found")
             }
         })
         .catch((error)=>{
-            console.log("Error getting document");
+            console.log("Error with getting the document");
         })
     }
     else{
-        console.log("User Id not Found in Local storage")
+        console.log("User not found in local storage")
     }
   })
 
