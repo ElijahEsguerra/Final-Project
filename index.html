@@ -3,69 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register & Login | Expense Tracker</title>
+    <link rel="icon" href="xpensefavicon.png" type="image/icon type">
+    <title>Register & Login | Xpense</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script type="module" src="firebaseauth.js"></script>
+    <script type="module" src="index.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container" id="signup" style="display:none;">
-      <h1 class="form-title">Register</h1>
-      <form method="post" action="">
-        <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
-        <div class="input-group">
-           <input type="text"  id="fName" placeholder="First Name" autocomplete="off" required>
-           <label for="fname">First Name</label>
-        </div>
-        <div class="input-group">
-            <input type="text"  id="lName" placeholder="Last Name" autocomplete="off" required>
-            <label for="lName">Last Name</label>
-        </div>
-        <div class="input-group">
+  <img src="xpenselogo.png" alt="Website Logo" id="logo">
+  <div class="container" id="signup" style="display:none;">
+    <h1 class="form-title">Register</h1>
+    <form method="post" action="">
+      <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+      <div class="input-group">
+          <input type="text"  id="fName" placeholder="First Name" autocomplete="off" required>
+          <label for="fname">First Name</label>
+      </div>
+      <div class="input-group">
+          <input type="text"  id="lName" placeholder="Last Name" autocomplete="off" required>
+          <label for="lName">Last Name</label>
+      </div>
+      <div class="input-group">
             <input type="email"  id="rEmail" placeholder="Email" autocomplete="off" required>
             <label for="rEmail">Email</label>
-        </div>
-        <div class="input-group">
-            <input type="password" id="rPassword"  placeholder="Password" required>
-            <label for="rPassword">Password</label>
-        </div>
-       <button class="btn" id="submitSignUp" >Sign Up</button>
-      </form>
-      <p class="or">
-        ----------or----------
-      </p>
-      <div class="links">
-        <p>Already have an account?</p>
-        <button id="signInButton">Sign In</button>
       </div>
+      <div class="input-group">
+          <input type="password" id="rPassword"  placeholder="Password" required>
+          <label for="rPassword">Password</label>
+      </div>
+      <button class="btn" id="submitSignUp" >Sign Up</button>
+    </form>
+    <p class="or">
+      ----------or----------
+    </p>
+    <div class="links">
+      <a id="signInButton">Already have an account?</a>
     </div>
+  </div>
 
   <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
-        <form method="post" action="">
-          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+    <h1 class="form-title">Sign In</h1>
+    <form method="post" action="">
+      <div id="signInMessage" class="messageDiv" style="display:none;"></div>
 
-          <div class="input-group">
-              <input type="email"  id="email" placeholder="Email" autocomplete="off" required>
-              <label for="email">Email</label>
-          </div>
-          <div class="input-group">
-            <input type="password" id="password"  placeholder="Password" required>
-              <label for="password">Password</label>
-          </div>
-          <p class="recover">
-            <a href="#">Recover Password</a>
-          </p>
-         <button class="btn" id="submitSignIn">Sign In</button>
-        </form>
-        <p class="or">
-          ----------or----------
-        </p>
-        <div class="links">
-          <p>Don't have an account yet?</p>
-          <button id="signUpButton">Sign Up</button>
-        </div>
+      <div class="input-group">
+          <input type="email"  id="email" placeholder="Email" autocomplete="off" required>
+          <label for="email">Email</label>
       </div>
-      <script src="script.js"></script>
+      <div class="input-group">
+          <input type="password" id="password"  placeholder="Password" required>
+          <label for="password">Password</label>
+      </div>
+      <p class="recover">
+        <a href="#">Recover Password</a>
+      </p>
+      <button class="btn" id="submitSignIn">Sign In</button>
+    </form>
+    <p class="or">
+      ----------or----------
+    </p>
+    <div class="links">
+      <a id="signUpButton">Dont have an account yet?</a>
+    </div>
+  </div>
+      <script src="toggle.js"></script>
 </body>
 </html>

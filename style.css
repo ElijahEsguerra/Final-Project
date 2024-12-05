@@ -1,146 +1,176 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
 }
 
-body{
+#logo{
+    width: 7.5%;
+    display: block; /* Ensures the image is treated as a block-level element */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+  
+body {
     background-color: #323437;
     color: #757575;
 }
-.container{
-    background:#323437;
-    width:450px;
-    padding:1.5rem;
-    margin:50px auto;
-    border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0.9);
+  
+.container {
+    background: #323437;
+    width: 450px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
 }
-form{
-    margin:0 2rem;
+  
+form {
+    margin: 0 2rem;
 }
-.form-title{
+  
+.form-title {
     color: #65676a;
-    font-size:2rem;
-    font-weight:bold;
-    text-align:center;
-    padding:1.3rem;
-    margin-bottom:0.4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
 }
-input{
-    color:#65676a;
-    width:100%;
-    background-color:transparent;
-    border:none;
-    border-bottom:1px solid #757575;
-    padding-left:1.5rem;
-    font-size:20px;
-}
-.input-group{
-    padding:1% 0;
-    position:relative;
-
-}
-.input-group i{
-    position:absolute;
-    color:black;
-}
-input:focus{
+  
+input {
+    color: #65676a;
+    width: 100%;
     background-color: transparent;
-    outline:transparent;
-    border-bottom:2px solid #e3b11d;
+    border: none;
+    border-bottom: 1px solid #757575;
+    padding-left: 1.5rem;
+    font-size: 20px;
 }
-input::placeholder{
-    color:transparent;
+  
+.input-group {
+    padding: 1% 0;
+    position: relative;
 }
-label{
-    color:#757575;
-    position:relative;
-    left:1.2em;
-    top:-1.3em;
-    cursor:auto;
-    transition:0.3s ease all;
+  
+.input-group i {
+    position: absolute;
+    color: black; 
 }
-input:focus~label,input:not(:placeholder-shown)~label{
-    top:-3em;
-    color:#e3b11d;
-    font-size:15px;
+  
+input:focus {
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid #e3b11d;
 }
-.recover{
-    text-align:right;
-    font-size:1rem;
-    margin-bottom:1rem;
-
+  
+input::placeholder {
+    color: transparent;
 }
-.recover a{
-    text-decoration:none;
-    color:#DDA15E;
+  
+label {
+    color: #757575;
+    position: relative;
+    left: 1.2em;
+    top: -1.3em;
+    cursor: auto;
+    transition: 0.3s ease all;
 }
-.recover a:hover{
+  
+input:focus~label,
+input:not(:placeholder-shown)~label {
+    top: -3em;
+    color: #e3b11d;
+    font-size: 15px;
+}
+  
+.recover {
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+  
+.recover a {
+    text-decoration: none;
+    color: #e3b11d;
+    transition: all 0.3s ease;
+}
+  
+.recover a:hover {
     color: #BC6C25;
-    text-decoration:underline;
+    text-decoration: underline;
 }
-button{
-    font-size:1.1rem;
-    padding:8px 0;
-    border-radius:5px;
-    outline:none;
-    border:none;
-    width:100%;
-    background: #2c2e31;
-    color:#757575;
-    cursor:pointer;
-    transition:0.9s;
-}
-button:hover{
-    background:#222325;
-}
-.or{
-    font-size:1.1rem;
-    margin-top:0.5rem;
-    text-align:center;
-}
-.icons{
-    text-align:center;
-}
-
-.links{
-    display:flex;
-    justify-content:space-around;
-    padding:0 4rem;
-    margin-top:0.9rem;
-    font-weight:bold;
-}
- #signUpButton, #signInButton{
-    color: #757575;
-    border:none;
-    background-color:transparent;
-    font-size:1rem;
-    font-weight:bold;
-}
-#signUpButton:hover, #signInButton:hover {
-    text-decoration:underline;
-    color: #757575;
-} 
-.messageDiv{
-    background-color:#2c2e31;
-    color:white;
-    padding:10px 20px;
-    margin:10px;
+  
+button {
+    font-size: 1.1rem;
+    padding: 8px 0;
     border-radius: 5px;
-    font-size:1rem;
-    opacity:0;
-    animation:fadeOut 7s forwards;
-
+    outline: none;
+    border: none;
+    width: 100%;
+    background: #2c2e31;
+    color: #757575;
+    cursor: pointer;
+    transition: 0.9s; 
 }
-
-/*Edit Profile Section*/
-
+  
+button:hover {
+    background: #222325;
+}
+  
+.or {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+  
+.icons {
+    text-align: center;
+}
+  
+.links {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 4rem;
+    margin-top: 0.9rem;
+    font-weight: bold;
+}
+  
+#signUpButton,
+#signInButton {
+    color: #757575;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+  
+#signUpButton:hover,
+#signInButton:hover {
+    text-decoration: underline;
+    color: #e3b11d;
+    cursor: pointer;
+}
+  
+.messageDiv {
+    background-color: #2c2e31;
+    color: #757575;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+}
+  
+ /* Edit Profile Section */
 #editProfile button {
-    width: 100%; /* Make buttons take full width of their container */
-    padding: 12px 20px; /* Add some padding */
-    margin-bottom: 10px; /* Add spacing between buttons */
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 4px;
     background-color: #2c2e31;
@@ -148,29 +178,35 @@ button:hover{
     font-size: 16px;
     cursor: pointer;
 }
-
-#editProfile #submitProfileEdits:hover { 
+  
+#editProfile #submitProfileEdits:hover {
     background-color: rgb(31, 116, 31);
 }
-
-#editProfile #deleteProfile { 
-    background-color: #bb362d !important; /* Red color for delete button */
+  
+#editProfile #deleteProfile {
+    background-color: #bb362d;
 }
-
-#editProfile #deleteProfile:hover { 
-    background-color: #8f2b24 !important; /* Red color for delete button */
+  
+#editProfile #deleteProfile:hover {
+    background-color: #8f2b24;
 }
-
-.back-link { 
-    display: block; 
-    text-align: center; 
-    margin: 10px auto; /* Increased top/bottom margin to 100px */
-    color: #e3b11d; 
-    text-decoration: none; 
+  
+.back-link {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    color: #e3b11d;
+    text-decoration: none;
 }
-
-.back-link:hover { 
-    color: #a78317; 
+  
+.back-link:hover {
+    color: #a78317;
 }
-
-
+  
+  
+/* Responsive Design */
+@media (max-width: 1199px) {
+    .container {
+      width: 80%;
+    }
+}

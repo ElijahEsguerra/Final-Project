@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="homepage.css">
-  <title>Spartan Budget Tracker</title>
+  <link rel="icon" href="xpensefavicon.png" type="image/icon type">
+  <title>Xpense</title>
   <script type="module" src="./homepage.js"></script>
 </head>
 
 <body>
   <button id="edit-profile-btn" onclick="window.location.href='editprofile.html'">Edit Profile</button>
   <button id="logout-btn">Logout</button> 
-  <div id="welcome-text">Welcome <span id="loggedUserFName"></span> <span id="loggedUserLName"></span></div>
+  <img src="xpenselogo.png" alt="Website Logo" id="logo"> <div id="welcome-text"> Welcome <span id="loggedUserFName"></span> <span id="loggedUserLName"></span></div>
 
   <div class="input-section">
     <div>
@@ -59,7 +60,16 @@
       </tfoot>
     </table>
   </div>
-  <script type="module" src="tracker.js"></script>
+
+  <div class="budget-container">
+    <input type="number" id="budget-input" placeholder="Type your budget">
+  </div>
+  
+  <div class="remaining-budget-container" id="remaining-budget">
+    Remaining Budget: <span id="remaining-amount"></span>
+  </div>
+
+  <script type="module" src="expensefunc.js"></script>
 </body>
 
 </html>
