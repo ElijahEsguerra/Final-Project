@@ -12,12 +12,13 @@ const firebaseConfig = {
     measurementId: "G-DQ99QV79HB"
   };
  
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-  const auth=getAuth();
-  const db=getFirestore();
+const auth=getAuth();
+const db=getFirestore();
 
+// User check and display
   onAuthStateChanged(auth, (user)=>{
     const loggedInUserId=localStorage.getItem('loggedInUserId');
     if(loggedInUserId){
@@ -28,9 +29,8 @@ const firebaseConfig = {
             if(docSnap.exists()){
                 const userData=docSnap.data();
                 document.getElementById('loggedUserFName').innerText=userData.firstName;
-                document.getElementById('loggedUserEmail').innerText=userData.email;
                 document.getElementById('loggedUserLName').innerText=userData.lastName;
-
+                document.getElementById('loggedUserEmail').innerText=userData.email;
             }
             else{
                 console.log("No user with the email found")
@@ -45,15 +45,14 @@ const firebaseConfig = {
     }
   })
 
-  const logoutButton=document.getElementById('logout');
-
-  logoutButton.addEventListener('click',()=>{
-    localStorage.removeItem('loggedInUserId');
-    signOut(auth)
-    .then(()=>{
-        window.location.href='index.html';
-    })
-    .catch((error)=>{
-        console.error('Error Signing out:', error);
-    })
-  })
+  const logoutButton = document.getElementById('logout-btn');
+  logoutButton.addEventListener('click', () => {
+      localStorage.removeItem('loggedInUserId');
+      signOut(auth)
+      .then(() => {
+          window.location.href = 'index.html';
+      })
+      .catch((error) => {
+          console.error('Error Signing out:', error);
+      });
+  });

@@ -1,9 +1,8 @@
- // Import the functions you need from the SDKs you need
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
- import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
- import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
- const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyDx_j0WyDQlyZvNpmFYZdhzhOTu1WuQqqo",
     authDomain: "websys-final-project.firebaseapp.com",
     projectId: "websys-final-project",
@@ -11,12 +10,12 @@
     messagingSenderId: "546674052898",
     appId: "1:546674052898:web:c7607163930bbdb92c1f7b",
     measurementId: "G-DQ99QV79HB"
- };
+};
 
- // Initialize Firebase
- const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
- function showMessage(message, divId){
+function showMessage(message, divId){
     var messageDiv=document.getElementById(divId);
     messageDiv.style.display="block";
     messageDiv.innerHTML=message;
@@ -24,9 +23,11 @@
     setTimeout(function(){
         messageDiv.style.opacity=0;
     },5000);
- }
- const signUp=document.getElementById('submitSignUp');
- signUp.addEventListener('click', (event)=>{
+}
+
+ // Sign up process
+const signUp=document.getElementById('submitSignUp');
+signUp.addEventListener('click', (event)=>{
     event.preventDefault();
     const email=document.getElementById('rEmail').value;
     const password=document.getElementById('rPassword').value;
@@ -51,23 +52,25 @@
             window.location.href='index.html';
         })
         .catch((error)=>{
-            console.error("error writing document", error);
+            console.error("Error writing document", error);
 
         });
     })
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode=='auth/email-already-in-use'){
-            showMessage('Email Address Already Exists !!!', 'signUpMessage');
+            showMessage('Email address already exists', 'signUpMessage');
         }
         else{
-            showMessage('unable to create User', 'signUpMessage');
+            showMessage('Unable to create user', 'signUpMessage');
         }
     })
- });
+});
 
- const signIn=document.getElementById('submitSignIn');
- signIn.addEventListener('click', (event)=>{
+
+// Sign in process
+const signIn=document.getElementById('submitSignIn');
+signIn.addEventListener('click', (event)=>{
     event.preventDefault();
     const email=document.getElementById('email').value;
     const password=document.getElementById('password').value;
@@ -89,4 +92,28 @@
             showMessage('Account does not Exist', 'signInMessage');
         }
     })
- })
+})
+
+ //recover password
+const recoverPasswordLink = document.querySelector('.recover a'); // Select the link
+
+recoverPasswordLink.addEventListener('click', (event) => {
+    event.preventDefault(); 
+
+    const email = document.getElementById('email').value; // Get the email input
+
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            showMessage('Password reset email sent', 'signInMessage'); 
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            let errorMessage = 'Error sending password reset email';
+
+            if (errorCode === 'auth/user-not-found') {
+                errorMessage = 'User not found';
+            } 
+            showMessage(errorMessage, 'signInMessage'); 
+        });
+});

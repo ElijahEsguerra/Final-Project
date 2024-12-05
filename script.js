@@ -1,3 +1,4 @@
+// Sign in & sign up switch
 const signUpButton=document.getElementById('signUpButton');
 const signInButton=document.getElementById('signInButton');
 const signInForm=document.getElementById('signIn');

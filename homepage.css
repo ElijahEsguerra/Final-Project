@@ -1,108 +1,241 @@
-body{
-    padding:30px;
-    background:linear-gradient(to right, #e2e2e2, #c9d6ff);
-}
-h1{
-    text-align:center;
-
-}
-button{
-    color:blueviolet;
-    background-color:#c9d6ff;
-    padding:5px;
-    border-radius:5px;
-    font-size:1rem;
-    font-weight:bold;
-    border:none;
-}
-button:hover{
-    text-decoration: underline;
-    color:blue;
-}
-button, div{
-    margin-left:15%;
-    font-size:20px;
-    padding:10px;
-}
-div{
-    font-weight:400;
-    color:rgb(12,11,11);
-
-}
-span{
-    font-weight:600;
-    font-size:22px;
-    color:black;
-}
-
-
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-  
-  h1, h2 {
-    text-align: center;
-  }
-  
-  .input-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .input-section label {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  .input-section input[type="number"], .input-section input[type="date"] {
-    padding: 5px;
-    margin-right: 10px;
-  }
-  
-  .input-section button {
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .expenses-list {
-    margin: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  tfoot td {
-    font-weight: bold;
-  }
-  
-  .delete-btn {
-    padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+  padding: 30px;
+  background: #323437;
+  font-family: monospace;
+  margin: 0;
+}
+
+#edit-profile-btn {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 100px; /* Adjust as needed */
+}
+
+#logout-btn {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+}
+
+/* Add styles for the welcome text */
+#welcome-text {  /* Assuming you add an ID to the welcome text div */
+  position: absolute;
+  top: 10px; /* Align with the buttons vertically */
+  left: 10px; /* Adjust as needed */
+  font-size: 25px;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  color: #65676a;
+  background-color: #323437;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+}
+
+button:hover {
+  color: #e3b11d;
+}
+
+#sort-amount-btn:hover,
+#sort-date-btn:hover,
+#sort-amount-btn:active,
+#sort-date-btn:active {
+  background-color: #e3b11d;
+}
+
+button,
+div {
+  font-size: 20px;
+  padding: 10px;
+}
+
+div {
+  font-weight: 400;
+  color: #65676a;
+}
+
+span {
+  font-weight: 600;
+  font-size: 22px;
+  color: #e3b11d;
+}
+
+h2 {
+  text-align: center;
+  color: #979a9e;
+}
+
+input[type="date"] {
+  -webkit-appearance: none; /* For Chrome, Safari, and Edge */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none; /* Standard property */
+  background-color: transparent; /* Example background color */
+  color: #65676a; /* Example text color */
+  border: 1px solid #757575; /* Example border */
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #e3b11d;
+  padding: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+input {
+  font-family: monospace;
+  font-size: 20px;
+  color: #757575;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  background-color: transparent;
+  outline: transparent;
+  border-bottom: 2px solid #e3b11d;;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.input-section label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.input-section input[type="number"],
+.input-section input[type="date"] {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.input-section button {
+  padding: 5px 10px;
+  background-color: #2c2e31;
+  color: #65676a;;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.expenses-list {
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #2c2e31;
+  color: #65676a;
+}
+
+tfoot td {
+  font-weight: bold;
+  color: #979a9e;
+}
+
+.delete-btn {
+  padding: 5px 10px;
+  background-color: #2c2e31;
+  color: #65676a;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-section>div:first-of-type {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-section>div:first-of-type>div {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.input-section>div:last-of-type {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-section div:first-child > div { /* Select the first set of divs */
+  display: flex;
+  align-items: center; /* Vertically align the content */
+  margin-bottom: 10px; /* Add spacing between the input groups */
+}
+
+.input-section div:first-child > div label { /* Select the labels */
+  width: 100px; /* Set a fixed width for the labels */
+  margin-right: 10px; /* Add spacing between labels and inputs */
+}
+
+.input-section div:first-child > div input { /* Select the inputs */
+  flex-grow: 1; /* Allow inputs to take up available space */
+}
+
+#add-btn {
+  margin: 0 5px 0 50px;
+}
+
+#sort-amount-btn {
+  margin: 0 5px 0 5px;
+}
+
+#sort-date-btn {
+  margin: 0 5px;
+}
+
+#edit-profile-btn {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 100px; /* Adjust as needed */
+}
+
+#logout-btn {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+}
+
+#delete-all-btn:hover {
+  background-color: rgb(155, 38, 38);
+  color: #65676a;
+}
